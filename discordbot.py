@@ -16,6 +16,10 @@ async def on_command_error(ctx, error):
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
+@client.event
+async def on_ready(): # botが起動したときに動作する処理
+    print('お問い合わせや質問はメールかDMまで　If you have any inquiries or questions, please email or DM me. enjoyserver.officialmail@gmail.com')
+    await client.change_presence(activity=discord.Game(name="with discord.py", type=1))
 
 
 bot.run(token)
